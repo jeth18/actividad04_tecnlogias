@@ -14,6 +14,7 @@
                 <exec.executable>java</exec.executable>
             </properties>
         </action>
+<<<<<<< HEAD
         <action>
             <actionName>debug</actionName>
             <packagings>
@@ -43,4 +44,6 @@
                 <exec.executable>java</exec.executable>
             </properties>
         </action>
+=======
+>>>>>>> REQ201
     </actions>
