@@ -15,6 +15,7 @@
             </properties>
         </action>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <action>
             <actionName>debug</actionName>
             <packagings>
@@ -46,4 +47,6 @@
         </action>
 =======
 >>>>>>> REQ201
+=======
+>>>>>>> REQ202
     </actions>

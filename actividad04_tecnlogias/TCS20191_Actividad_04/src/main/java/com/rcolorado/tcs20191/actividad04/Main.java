@@ -37,6 +37,7 @@ public class Main {
         System.out.println("... espere un momento");
 
         List<DivisaJsonClass> lista = ConsultaBitCoinMarket();
+        System.out.println("Se consultó de un total de : " + lista.size() + " divisas");
 
         for (int i  = 0; i < lista.size()-2; i++) {
             if (lista.get(i).symbol.equals("localbtc" + divisa.toUpperCase())) {
