@@ -40,12 +40,17 @@ public class Main {
         System.out.println("Se consultó de un total de : " + lista.size() + " divisas");
 
         for (int i  = 0; i < lista.size()-2; i++) {
+<<<<<<< HEAD
             if (lista.get(i).symbol.equals("localbtc" + divisa.toUpperCase())) {
                 System.out.println(lista.get(i+1).currency + " : " + lista.get(i+1).ask);
                 System.out.println("Venta : " + lista.get(i).bid);
+=======
+            if (lista.get(i).symbol.equals("localbtc" + divisa)) {
+                System.out.println(lista.get(i).currency + " : " + lista.get(i).ask);
+>>>>>>> BUG102
             }
         }
-        
+       
 
     }
     
