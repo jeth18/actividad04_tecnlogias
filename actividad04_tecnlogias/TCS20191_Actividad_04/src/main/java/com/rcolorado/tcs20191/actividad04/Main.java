@@ -37,17 +37,25 @@ public class Main {
         System.out.println("... espere un momento");
 
         List<DivisaJsonClass> lista = ConsultaBitCoinMarket();
+
         System.out.println("Se consultó de un total de : " + lista.size() + " divisas");
 
-
+        boolean encontrado = false;    //Indica si se encontró la divisa solicitada.
 
         for (int i  = 0; i < lista.size(); i++) {
         
             if (lista.get(i).symbol.equals("localbtc" + divisa.toUpperCase())) {
                 System.out.println(lista.get(i).currency + " : " + lista.get(i).ask);
                 System.out.println("Venta : " + lista.get(i).bid);
+                encontrado = true;
             }
         }
+        if (!encontrado) {
+            System.out.println("No se pudo encontrar la divisa solicitada.");
+        }
+        
+
+
     }
     
     
