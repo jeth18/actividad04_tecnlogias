@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,6 +27,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException  {
 
+        Date date = new Date();
         Scanner scanner = new Scanner(System.in);
         String divisa;
         do {
@@ -48,6 +50,7 @@ public class Main {
             if (lista.get(i).symbol.equals("localbtc" + divisa.toUpperCase())) {
                 System.out.println(lista.get(i).currency + " : " + lista.get(i).ask);
                 System.out.println("Venta : " + lista.get(i).bid);
+                System.out.println(date.getDate() + "/" + date.getMonth() + "/" + "2019");
                 encontrado = true;
             }
         }
