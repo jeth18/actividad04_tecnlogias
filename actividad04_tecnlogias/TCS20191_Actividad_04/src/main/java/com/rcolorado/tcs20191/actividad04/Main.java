@@ -57,7 +57,7 @@ public class Main {
         if (!encontrado) {
             System.out.println("No se pudo encontrar la divisa solicitada.");
         }
-        }while(divisa.equals("NINGUNO"));
+        }while(!divisa.equals("NINGUNO"));
 
 
     }
