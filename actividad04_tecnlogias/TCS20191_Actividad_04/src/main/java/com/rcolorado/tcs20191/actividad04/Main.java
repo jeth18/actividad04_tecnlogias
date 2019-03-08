@@ -27,13 +27,14 @@ public class Main {
     public static void main(String[] args) throws IOException  {
 
         Scanner scanner = new Scanner(System.in);
-
+        String divisa;
+        do {
         System.out.println("********************");
         System.out.println("¿Cuánto vale un Bitcoin en mi divisa?");
         System.out.println("********************");
         System.out.println("Introduce el nombre de tu divisa (MXN, USD, CAD, EUR, ARS, VES):");
 
-        String divisa = scanner.next();
+        divisa = scanner.next();
         System.out.println("... espere un momento");
 
         List<DivisaJsonClass> lista = ConsultaBitCoinMarket();
@@ -53,7 +54,7 @@ public class Main {
         if (!encontrado) {
             System.out.println("No se pudo encontrar la divisa solicitada.");
         }
-        
+        }while(divisa.equals("NINGUNO"));
 
 
     }
