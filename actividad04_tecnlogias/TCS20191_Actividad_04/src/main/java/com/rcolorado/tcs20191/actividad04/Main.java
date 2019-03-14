@@ -14,7 +14,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -86,7 +85,6 @@ public class Main {
    */
   class DivisaJsonClass {
     // Precio a la venta
-
     public double bid;
     public String currency;
     // Precio a la compra
