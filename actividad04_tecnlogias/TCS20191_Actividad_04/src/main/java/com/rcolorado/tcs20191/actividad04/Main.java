@@ -95,10 +95,11 @@ public class Main {
    */
   class DivisaJsonClass {
     // Precio a la venta
-    public double bid;
-    public String currency;
+
+    private double bid;
+    private String currency;
     // Precio a la compra
-    public double ask;
-    public String symbol;
+    private double ask;
+    private String symbol;
   }
 }
