@@ -17,6 +17,8 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -62,22 +64,30 @@ public class Main {
 
   }
 
-  private static List<DivisaJsonClass> ConsultaBitCoinMarket() throws IOException {
-    URL url = new URL("http://api.bitcoincharts.com/v1/markets.json");
-    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-    conn.setRequestMethod("GET");
-    conn.setRequestProperty("Accept", "application/json");
-
-    if (conn.getResponseCode() != 200) {
-      throw new RuntimeException("Fallo : HTTP error code : " + conn.getResponseCode());
+  private static List<DivisaJsonClass> ConsultaBitCoinMarket() {
+     InputStreamReader isr = null;
+     TypeToken<List<DivisaJsonClass>> token = null;
+     
+    try {
+        URL url = new URL("http://api.bitcoincharts.com/v1/markets.json");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setRequestProperty("Accept", "application/json");
+        
+        if (conn.getResponseCode() != 200) {
+            throw new execpcionFalloHttpConecction();
+        }
+        
+        isr = new InputStreamReader(conn.getInputStream());
+        token = new TypeToken<List<DivisaJsonClass>>() {};
+      
+    } catch (IOException | NullPointerException ex) {
+          Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (execpcionFalloHttpConecction e) {
+         System.out.println(e.excepcionError());
     }
-
-    InputStreamReader isr = new InputStreamReader(conn.getInputStream());
-    TypeToken<List<DivisaJsonClass>> token = new TypeToken<List<DivisaJsonClass>>() {
-    };
-    List<DivisaJsonClass> lista = new Gson().fromJson(isr, token.getType());
-
-    return lista;
+        
+    return  new Gson().fromJson(isr, token.getType());
   }
 
   /*
